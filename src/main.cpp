@@ -7,8 +7,8 @@
 
 float volt = 0.0;
 float vin = 0.0;  
-float r1 = 988200.0;
-float r2 = 99370.0;
+float r1 = 98820;
+float r2 = 9937;
 
 int timeWake = 0;
 
@@ -42,13 +42,14 @@ void countsleep(){
 void loop() {
 
   sensors.requestTemperatures(); // Send the command to get temperatures
-  float tempC = sensors.getTempCByIndex(0);
+  float atempC = sensors.getTempCByIndex(0);
+  float btempC = sensors.getTempCByIndex(1);
   Serial.print("DS18B20: ");
-  Serial.print(tempC);
+  Serial.print(atempC);
   Serial.println("C");
 
   value = analogRead(ADC_A0);
-  volt = (value * 3.0)/1024.0;
+  volt = (value * 3.0)/1023.0;
   vin = volt / (r2 / (r1+r2));
 
   Serial.print("V - ");
