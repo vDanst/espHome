@@ -13,7 +13,7 @@
 #define CHAT_ID "30"
 
 const char* ssid = "ASUS_GUEST";
-const char* password = "QaS33687";
+const char* password = "";
 
 X509List cert(TELEGRAM_CERTIFICATE_ROOT);
 WiFiClientSecure secured_client;
